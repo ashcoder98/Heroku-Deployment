@@ -6,7 +6,7 @@ const methodOverride = require("method-override")
 const mongoose = require("mongoose")
 const app = express()
 const db = mongoose.connection
-require('dotenv').config()
+require('dotenv').config();
 //___________________
 //Port
 //___________________
@@ -22,7 +22,7 @@ const MONGODB_URL = process.env.MONGODB_URL
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
-// mongoose.connect(MONGODB_URI, {
+// mongoose.connect(MONGODB_URL, {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // })
@@ -50,9 +50,9 @@ app.use(methodOverride("_method")) // allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
-// app.get("/", (req, res) => {
-//   res.send("Hello World!")
-// })
+app.get("/", (req, res) => {
+  res.send("Hello World!")
+})
 
 //___________________
 //Listener
